@@ -1,6 +1,7 @@
 """
 URL configuration for myproject1 project.
 
+#약속: urlpatterns 반드시 정의하기 (라우팅과 관련된 정보)
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
 Examples:
@@ -15,8 +16,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+# http://127.0.0.1/ #(home)
+# http://127.0.0.1/app/
 
+# http://127.0.0.1/create/
+# http://127.0.0.1/read/1/
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('myapp.urls'))
 ]
